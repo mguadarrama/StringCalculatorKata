@@ -1,14 +1,13 @@
-﻿@model StringCalculatorKataWeb.Controllers.HomeViewModel
+﻿@model StringCalculatorWeb.ViewModels.HomeViewModel
 @{
     ViewBag.Title = "Home Page";
     Layout = null;
 }
-
 <form action="@Url.Action("Index")" method="POST">
 
-    <input type="text" name="valueString" value=" " />/>
-   
+    <input type="text" name="valueString" value=" "/>
 
+     Result: @Model.returnValue
 
     <input type="submit" name="save" value="save" />
 

@@ -4,18 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using StringCalculatorKata;
+using StringCalculatorWeb.ViewModels;
 
-namespace StringCalculatorKataWeb.Controllers
+namespace StringCalculatorWeb.Controllers
 {
     public class HomeController : Controller
     {
-        StringCalculator stringCalculator = new StringCalculator();
 
-        //private IStringCalculator calculator;
-        //public HomeController(IStringCalculator stringCalculator)
-        //{
-        //    calculator = stringCalculator;
-        //}
+        private IStringCalculator stringCalculator;
+        public HomeController(IStringCalculator stringCalculator)
+        {
+            this.stringCalculator = stringCalculator;
+        }
         [HttpGet]
         public ActionResult Index()
         {
@@ -30,11 +30,5 @@ namespace StringCalculatorKataWeb.Controllers
             return View(homeViewModel);
         }
 
-    }
-
-    public class HomeViewModel
-    {
-        public string  valueString { get; set; }
-        public int returnValue { get; set; }
     }
 }
