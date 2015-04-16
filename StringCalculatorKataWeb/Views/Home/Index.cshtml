@@ -1,0 +1,16 @@
+﻿@model StringCalculatorKataWeb.Controllers.HomeViewModel
+@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+
+<form action="@Url.Action("Index")" method="POST">
+
+    <input type="text" name="valueString" value=" " />/>
+   
+
+
+    <input type="submit" name="save" value="save" />
+
+</form>
+
